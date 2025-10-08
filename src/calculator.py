@@ -34,6 +34,14 @@ def divide(a, b):
     print(f"Result: {Result}")
     return Result
 
+def multiply(a, b):
+    """Multiply two numbers"""
+    return a * b
+
+def divide(a, b):
+    """Divide a by b"""
+    return a / b
+
 def power(a,b):
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise TypeError("Power function requires numeric inputs")
