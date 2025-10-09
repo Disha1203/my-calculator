@@ -1,0 +1,17 @@
+pylint src/ --output-format=colorized************* Module src.calculator
+src/calculator.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
+src/calculator.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+src/calculator.py:41:0: C0303: Trailing whitespace (trailing-whitespace)
+src/calculator.py:42:29: C0303: Trailing whitespace (trailing-whitespace)
+src/calculator.py:50:0: C0303: Trailing whitespace (trailing-whitespace)
+src/calculator.py:60:0: C0304: Final newline missing (missing-final-newline)
+src/calculator.py:55:1: W0511: TODO: Students will add multiply, divide, power, sqrt functions (fixme)
+src/calculator.py:21:4: C0103: Variable name "Result" doesn't conform to snake_case naming style (invalid-name)
+src/calculator.py:30:25: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+src/calculator.py:33:4: C0103: Variable name "Result" doesn't conform to snake_case naming style (invalid-name)
+src/calculator.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+src/calculator.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 6.92/10 (previous run: 6.92/10, +0.00)
+
