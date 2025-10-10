@@ -5,7 +5,8 @@ Example: python src/cli.py add 5 3
 
 import sys
 import click
-from calculator import add, subtract, multiply, divide, power, sqrt
+from .calculator import add, subtract, multiply, divide
+
 
 
 @click.command()
@@ -19,30 +20,28 @@ def calculate(operation, num1, num2=None):
             result = add(num1, num2)
         elif operation == "subtract":
             result = subtract(num1, num2)
-        
         elif operation == "multiply":
             result = multiply(num1, num2)
         elif operation == "divide":
             result = divide(num1, num2)
         else:
-            click.echo(f"Unknown operation:{operation}")
+            click.echo(f"Unknown operation: {operation}")
             sys.exit(1)
 
-
-        # Format result nicely
+        # Format result: integer if possible, otherwise 2 decimals
         if result == int(result):
             click.echo(int(result))
         else:
             click.echo(f"{result:.2f}")
 
-    except ValueError as e:
-        click.echo(f"Error: {e}")
+    except ValueError as err:
+        click.echo(f"Error: {err}")
         sys.exit(1)
-
-    except Exception as e:
-        click.echo(f"Unexpected error: {e}")
+    except TypeError as err:
+        click.echo(f"Error: {err}")
         sys.exit(1)
 
 
 if __name__ == "__main__":
-    calculate()
+    # Use Click's CLI invocation correctly
+    calculate()  # no arguments passed manually; click handles argv

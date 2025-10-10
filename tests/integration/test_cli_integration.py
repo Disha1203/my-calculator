@@ -1,22 +1,21 @@
 """
 Integration Tests - CLI + Calculator Working Together
 """
-
 import subprocess
 import sys
-import pytest
-
+import os
 
 class TestCLIIntegration:
-    """Test CLI application integrating with
-    calculator module"""
-
+    """Test CLI application integrating with calculator
+module"""
     def run_cli(self, *args):
         """Helper method to run CLI and capture
         output"""
-        cmd = [sys.executable, "src/cli.py"] + list(args)
-        result = subprocess.run(cmd, capture_output=True, text=True, cwd=".")
+        cmd = [sys.executable,"-m","src.cli"] + list(args)
+        result = subprocess.run(cmd,
+        capture_output=True, text=True, cwd=".")
         return result
+
 
     def test_cli_add_integration(self):
         """Test CLI can perform addition"""

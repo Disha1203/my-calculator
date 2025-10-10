@@ -6,63 +6,48 @@ Students will extend this with more functions
 import math
 
 
-def add(a, b):
-    """Add two numbers together"""
-    return a + b
+def add(num1, num2):
+    """Add two numbers together."""
+    return num1 + num2
 
 
-def subtract(a, b):
-    """Subtract b from a"""
-    return a - b
+def subtract(num1, num2):
+    """Subtract num2 from num1."""
+    return num1 - num2
 
 
-def multiply(a, b):
-    """Multiply two numbers with input validation and logging."""
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+def multiply(num1, num2):
+    """Multiply two numbers with input validation."""
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
         raise TypeError("Both arguments must be numbers")
-
-    print(f"Multiplying {a} × {b}")  # Added logging
-    Result = a * b
-    print(f"Result: {Result}")
-    return Result
+    return num1 * num2
 
 
-def divide(a, b):
-    """Divide a by b with enhanced error handling."""
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+def divide(num1, num2):
+    """Divide num1 by num2 with enhanced error handling."""
+    if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
         raise TypeError("Division requires numeric inputs")
-    if b == 0:
-        raise ValueError(f"Cannot divide by zero - division by zero is undefined")
-
-    print(f"Dividing {a} ÷ {b}")  # Added logging
-    Result = a / b
-    print(f"Result: {Result}")
-    return Result
+    if num2 == 0:
+        raise ValueError("Cannot divide by zero - division by zero is undefined")
+    return num1 / num2
 
 
-def power(a, b):
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+def power(base, exponent):
+    """Return base raised to the power of exponent."""
+    if not isinstance(base, (int, float)) or not isinstance(exponent, (int, float)):
         raise TypeError("Power function requires numeric inputs")
-
-    print(f"Power {a} ^ {b}")
-    result = math.pow(a, b)
-    print(f"Result:{result}")
-    return result
+    return math.pow(base, exponent)
 
 
-def sqrt(n):
-    if n < 0:
-        raise ValueError(f"Cannot sqroot {n} - sqroot of negative numbers is undefined")
+def sqrt(number):
+    """Return the square root of a number."""
+    if number < 0:
+        raise ValueError("Cannot take square root of a negative number")
+    return math.sqrt(number)
 
-    print(f"Square rooting {n}")
-    result = math.sqrt(n)
-    print(f"Result:{result}")
-    return result
-
-
-# TODO: Students will add multiply, divide, power, sqrt functions
 
 if __name__ == "__main__":
+    # Example usage
     print("🧮 Calculator Module")
     print(f"2 + 3 = {add(2, 3)}")
     print(f"5 - 2 = {subtract(5, 2)}")
